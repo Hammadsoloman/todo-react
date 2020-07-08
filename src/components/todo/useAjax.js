@@ -10,7 +10,7 @@ function useAjax(callback) {
             headers: { 'Content-Type': 'application/json' },
             mode: 'cors',
         };
-        let url = 'https://todo-app-server-lab32.herokuapp.com/api/v1/todo';
+        let url = 'https://api401-todo.herokuapp.com/todo';
         let data = {
             item: obj.item,
             difficulty: obj.difficulty,
@@ -27,7 +27,7 @@ function useAjax(callback) {
             headers: { 'Content-Type': 'application/json' },
             mode: 'cors',
         };
-        let url = `https://todo-app-server-lab32.herokuapp.com/api/v1/todo/${_id}`;
+        let url = `https://api401-todo.herokuapp.com/todo/${_id}`;
         let data = {
             item: obj.item,
             difficulty: obj.difficulty,
@@ -44,7 +44,7 @@ function useAjax(callback) {
             headers: { 'Content-Type': 'application/json' },
             mode: 'cors',
         };
-        let url = `https://todo-app-server-lab32.herokuapp.com/api/v1/todo/${id}`;
+        let url = `https://api401-todo.herokuapp.com/todo/${id}`;
         await axios.delete(url, config);
         let response = await getAllItems();
         setItems([response]);
@@ -55,7 +55,7 @@ function useAjax(callback) {
             headers: { 'Content-Type': 'application/json' },
             mode: 'cors',
         };
-        let url = 'https://todo-app-server-lab32.herokuapp.com/api/v1/todo';
+        let url = 'https://api401-todo.herokuapp.com/todo';
         let response = await axios.get(url, config);
         callback(response.data);
     };
