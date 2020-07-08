@@ -25,7 +25,7 @@ function FilterProvider(props) {
         funButton: setButtons,
         count,
         funCount: setCount,
-    }
+    };
 
     return (
         <FilterContext.Provider value={state}>
