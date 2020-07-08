@@ -1,8 +1,10 @@
 # todo-react
 
-**In this phase, we’ll be connecting our application to an API so that our list will be saved permanently. This will require a working and deployed API server with a proper “To Do” data model and appropriate REST routes**
+**In this phase, we’ll be adding some top-level settings for the application, so that the user can make some display choices that the app will use by default.**
 
-#### To Do List Manager Phase 2: Connecting the To Do Application to an external API and Database
+#### To Do List Manager Phase 3: Add some configuration settings to the application
+
+
 
 
 
