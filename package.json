@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
+  "homepage": "",
   "main": "src/index.js",
   "dependencies": {
     "axios": "^0.19.2",
@@ -27,7 +28,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b custom-hooks -d build"
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
