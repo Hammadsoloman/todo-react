@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 function useAjax(callback) {
@@ -15,12 +15,12 @@ function useAjax(callback) {
             item: obj.item,
             difficulty: obj.difficulty,
             complete: obj.complete,
-            assignee: obj.assignee,
+            assignee: obj.assignee
         };
         await axios.post(url, data, config);
         let response = await getAllItems();
         setItems([response]);
-    };
+    }
 
     const updateItem = async (obj, _id) => {
         let config = {
@@ -32,39 +32,40 @@ function useAjax(callback) {
             item: obj.item,
             difficulty: obj.difficulty,
             complete: !obj.complete,
-            assignee: obj.assignee,
+            assignee: obj.assignee
         };
         await axios.put(url, data, config);
         let response = await getAllItems();
         setItems([response]);
-    };
+    }
 
     const deleteItem = async (id) => {
         let config = {
             headers: { 'Content-Type': 'application/json' },
-            mode: 'cors',
+            mode: 'cors'
         };
         let url = `https://api401-todo.herokuapp.com/todo/${id}`;
         await axios.delete(url, config);
         let response = await getAllItems();
         setItems([response]);
-    };
+    }
 
     const getAllItems = async () => {
         let config = {
             headers: { 'Content-Type': 'application/json' },
-            mode: 'cors',
-        };
+            mode: 'cors'
+        }
         let url = 'https://api401-todo.herokuapp.com/todo';
         let response = await axios.get(url, config);
+
         callback(response.data);
-    };
+    }
 
-    useEffect(() => {
-        getAllItems();
-    });
+    // useEffect(()=>{
 
-    return [addNewItem, updateItem, deleteItem, items];
+    // });
+
+    return [addNewItem, updateItem, deleteItem, getAllItems, items];
 }
 
 export default useAjax;

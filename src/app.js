@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TodoList from './components/list';
 import TodoForm from './components/form';
 import './components/todo.scss';
+import Auth from './components/auth/auth';
+import Login from './components/auth/login';
+import LoginContext from './components/auth/context';
 
 
 const App = () => {
@@ -24,17 +27,31 @@ const App = () => {
 
       <main>
         <Container>
-
           <FilterContext>
-            <ToDo />
-            <section className="todo">
-              <div className="form-border">
-                <TodoForm />
+            <LoginContext>
+              <Login />
+              <div id='flex'>
+                <Auth capability="read">
+                  <ToDo />
+                  <section className="todo">
+                    <div className="list-group">
+                      <TodoList />
+                    </div>
+                  </section>
+                </Auth>
+                <Auth capability="update">
+                  <section className="todo">
+                    <div className="form-border">
+                      <TodoForm />
+                    </div>
+                    {/* <div className="list-group">
+                    <TodoList />
+                  </div> */}
+                  </section>
+                </Auth>
               </div>
-              <div className="list-group">
-                <TodoList />
-              </div>
-            </section>
+            </LoginContext>
+
           </FilterContext>
         </Container>
       </main>
