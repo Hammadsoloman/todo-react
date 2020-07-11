@@ -1,7 +1,7 @@
 {
   "name": "demo-context-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "/",
   "keywords": [],
   "homepage": "",
   "main": "src/index.js",
@@ -28,7 +28,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b custom-hooks -d build"
   },
   "browserslist": {
     "production": [
