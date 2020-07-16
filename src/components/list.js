@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { ListGroup, Button, Toast, ToastHeader } from 'react-bootstrap';
 import { FilterContext } from './items';
@@ -22,7 +23,7 @@ function TodoList() {
       context.funToggle('Go to All');
       context.funButton(0);
     }
-  }
+  };
 
   const _buttons = (num) => {
     let array = [];
@@ -30,7 +31,7 @@ function TodoList() {
       array.push(<Button key={i} onClick={() => context.funButton(i)}>{i + 1}</Button>);
     }
     return array;
-  }
+  };
 
   const _getItem = (array) => {
     return array.map(item => {
@@ -55,7 +56,7 @@ function TodoList() {
         </ToastHeader>
         <Toast.Body className='assign'>{item.item}</Toast.Body>
         <small className='difficult'>Difficulty: {item.difficulty}</small>
-      </Toast>
+      </Toast>;
     });
   };
 
@@ -65,25 +66,25 @@ function TodoList() {
       const result = new Array(Math.ceil(array.length / 3))
         .fill()
         .map(() => array.splice(0, 3));
-      return [_getItem(result[context.buttons]), _buttons(result.length)]
+      return [_getItem(result[context.buttons]), _buttons(result.length)];
     }
     else {
-      return [_getItem(array), _buttons(0)]
+      return [_getItem(array), _buttons(0)];
     }
 
-  }
+  };
   const _data = () => {
     if (context.toggle === 'Go to All') {
       return <ListGroup className="float-right">
         {_render(first)}
-      </ListGroup>
+      </ListGroup>;
     }
     else {
       return <ListGroup className="float-right">
         {_render(arrays)}
-      </ListGroup>
+      </ListGroup>;
     }
-  }
+  };
 
 
   return (
@@ -91,7 +92,7 @@ function TodoList() {
       {_data()}
       <Button className='filter-bt' onClick={() => _filter()}>{context.toggle}</Button>
     </>
-  )
+  );
 }
 
 

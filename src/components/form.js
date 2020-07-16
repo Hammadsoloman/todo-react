@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import React, { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import useForm from './form-custom';
