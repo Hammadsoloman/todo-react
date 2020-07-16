@@ -9,10 +9,16 @@
     "globals": {
         "fail": true
     },
-    "extends": "react-app",
+    "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module",
-        "ecmaVersion": 2018
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true,
+            "arrowFunctions": true,
+            "classes": true,
+            "spread": true
+        }
     },
     "rules": {
         "no-console": "off",
@@ -42,5 +48,6 @@
                 "args": "none"
             }
         ]
-    }
+    },
+    "parser": "babel-eslint"
 }

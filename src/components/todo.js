@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
 import { FilterContext } from './items';
 import { Navbar, Container } from 'react-bootstrap';

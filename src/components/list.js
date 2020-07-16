@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext } from 'react';
 import { ListGroup, Button, Toast, ToastHeader } from 'react-bootstrap';
 import { FilterContext } from './items';
